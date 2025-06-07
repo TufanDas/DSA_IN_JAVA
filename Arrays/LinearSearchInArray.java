@@ -1,7 +1,7 @@
 package Arrays;
 
 // Define a public class named LinearSearch
-public class LinearSearch {
+public class LinearSearchInArray {
 
     // Method to perform linear search
     public static int linearSearch(int arr[], int key){
