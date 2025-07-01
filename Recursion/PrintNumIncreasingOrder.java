@@ -1,25 +1,29 @@
 package Recursion;
 
-// This class prints numbers from 1 to 10 using recursion
+// This class prints numbers from 1 to 10 using recursion (reverse logic)
 public class PrintNumIncreasingOrder {
 
-    // This method prints numbers from n up to 10
+    // This method prints numbers from 1 up to n using post-order recursion
     static void printIncreasingOrder(int n) {
-        // Base case: if n becomes greater than 10, stop the recursion
-        if (n > 10) return;
+        // Base case: when n reaches 1, we stop going deeper
+        if (n == 1) {
+            System.out.print(n + " "); // Start printing from 1
+            return; // Exit the recursion
+        }
 
-        // Print the current number
+        // First, go deeper into the recursion by decreasing the number
+        // This reaches down to 1 before printing anything
+        printIncreasingOrder(n - 1);
+
+        // Now that the deepest call is done, start printing on the way back
         System.out.print(n + " ");
-
-        // Move to the next number by calling the same function with n + 1
-        printIncreasingOrder(n + 1);
     }
 
     public static void main(String[] args) {
-        // We want to start printing from 1
-        int n = 1;
+        // We want to print from 1 to 10
+        int n = 10;
 
-        // Call the recursive function to start printing numbers
+        // Call the recursive function
         printIncreasingOrder(n);
     }
 }
